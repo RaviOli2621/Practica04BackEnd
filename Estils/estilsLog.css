@@ -2,19 +2,13 @@
 *{box-sizing:border-box;}
 body
 {
-    background-image: url("ImagenFondo.png");
-	background-attachment: fixed;
+	background-color: rgba(182, 254, 232, 0.25);
+    background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: 125%;
 	background-position: top;
 }
-div form{
-	width:300px;
-	padding:16px;
-	border-radius:10px;
-	margin:auto;
-	background-color:rgb(147, 204, 241);
-}
+
 
 form label{
 	width:72px;
@@ -32,16 +26,7 @@ form input[type="text"]{
 	display:inline-block;
 }
 
-div form input[type="submit"]{
-	width:100%;
-	padding:8px 16px;
-	/*margin-top:32px;*/
-	border:1px solid #000;
-	border-radius:5px;
-	display:block;
-	color:#fff;
-	background-color:rgba(11, 92, 116);
-} 
+
 
 form input[type="submit"]:hover{
 	cursor:pointer;
@@ -89,25 +74,32 @@ textarea{
 	margin:8px 0;
 	display:inline-block;
 }
-#enviar
+#inputSub
 {
     width:100%;
 	padding:8px 16px;
-	margin-top:32px;
+	margin-top:16px;
 	border:1px solid #000;
 	border-radius:5px;
 	display:block;
-	color:#fff;
-	background-color:rgba(11, 92, 116);
+	color:#000000;
+	background-color:rgba(114, 184, 193, 0.25);
     text-align: center;
 }
 #gen
 {
-	background-color:rgb(94, 222, 222);
-	border-radius:5px;
-    margin:auto; 
-    width:100px;
-    border: 4px solid #090c72;
+	display:inline-block;
+
+	margin: auto;
+    background-color:rgb(251, 255, 255,0.50);
+    width:auto;
+    text-align:center;
+	
+    border-radius:15px;
+    border-bottom: 2px solid #424242;
+    border-top: 2px solid #424242;
+    border-left: 2px solid #424242;
+    border-right: 2px solid #424242;
 }
 #Res
 {
@@ -131,50 +123,7 @@ textarea{
 	background-color:rgb(116, 11, 11);
     text-align: center;
 }
-#TabCerc
-{
-	overflow-x: scroll;
-	display:inline-block;
-
-	margin: auto;
-    background-color:rgb(94, 222, 222);
-    width:auto;
-    text-align:center;
-    border-radius:5px;
-    border-bottom: 4px solid #090c72;
-    border-top: 4px solid #090c72;
-    border-left: 4px solid #090c72;
-    border-right: 4px solid #090c72;
-
-}
-#DadCerc
-{
-	border-radius:5px;
-    border: 10px solid #000;
-    border-collapse:collapse ;
-    margin:auto; 
-}
 div
 {
 	text-align:center;
 }
-#LoginForm
-{
-	display: flex; 
-	position: relative;
-	width:auto;
-	padding:16px;
-	border-radius:10px;
-	background-color:rgb(147, 204, 241);
-
-	position: relative; /* or relative */
-	left: 95%;
-}
-#LoginButton
-{
-	padding: 3px;
-	margin-top: 0.6rem;
-	font-family: cursive;
-	font-weight: bold;
-}
-/*Estilo boton de enviar*/

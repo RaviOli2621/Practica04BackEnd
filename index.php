@@ -8,20 +8,29 @@
     <title>Index</title>
 </head>
 <body> <!--Botons per anar a les diferents vistes-->
-    <form action="<?php echo htmlentities("Vista/vistaIns.php"); ?>" method = "POST">
-        <input class="button" type="submit" name="AnInserir" value="Inserir">
-    </form>
-    <form action="<?php echo htmlentities("Vista/vistaCer.php"); ?>" method = "POST">
-        <input class="button" type="submit" name="AnCercar" value="Cercar">
-    </form>
-    <form action="<?php echo htmlentities("Vista/vistaEd.php"); ?>" method = "POST">
-        <input class="button" type="submit" name="AnEditar" value="Editar">
-    </form>
-    <form action="<?php echo htmlentities("Vista/vistaEl.php"); ?>" method = "POST">
-        <input class="button" type="submit" name="AnEliminar" value="Eliminar">
-    </form>
-    <form action="<?php echo htmlentities("Vista/vistaPag.php"); ?>" method = "POST">
-        <input class="button" type="submit" name="AnEliminar" value="Eliminar">
-    </form>
+    
+        <form id="LoginForm" action="<?php echo htmlentities("Vista/vistaLog.php"); ?>" method = "POST">
+            <input id="LoginButton" type="submit" name="AnEliminar" value="Login">
+        </form>
+        <form id="LoginForm" action="<?php echo htmlentities("Vista/vistaLog.php"); ?>" method = "POST">
+            <input id="LoginButton" type="submit" name="AnEliminar" value="Login">
+        </form>
+    <div>
+        <form action="<?php echo htmlentities("Vista/vistaPag.php"); ?>" method = "POST">
+            <input class="button" type="submit" name="AnEliminar" value="MostrarArticles">
+        </form>
+        <form action="<?php echo htmlentities("Vista/vistaIns.php"); ?>" method = "POST">
+            <input class="button" type="submit" name="AnInserir" value="Inserir">
+        </form>
+        <form action="<?php echo htmlentities("Vista/vistaCer.php"); ?>" method = "POST">
+            <input class="button" type="submit" name="AnCercar" value="Cercar">
+        </form>
+        <form action="<?php echo htmlentities("Vista/vistaEd.php"); ?>" method = "POST">
+            <input class="button" type="submit" name="AnEditar" value="Editar">
+        </form>
+        <form action="<?php echo htmlentities("Vista/vistaEl.php"); ?>" method = "POST">
+            <input class="button" type="submit" name="AnEliminar" value="Eliminar">
+        </form>
+    </div>
 </body>
 </html>

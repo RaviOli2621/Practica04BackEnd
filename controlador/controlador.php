@@ -1,11 +1,11 @@
 <?php 
 
-include  "../Model/model.php";
+include  "../model/model.php";
     function inserir($titol,$cos)//Funció per inserir dades a la BD
     {
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_rubio', 'root', '');
+	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
             $insertar = $connexio->prepare("INSERT INTO articles (titol,cos) VALUES(:titol, :cos)");
             $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo");
                         
@@ -29,7 +29,7 @@ include  "../Model/model.php";
     {
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_rubio', 'root', '');
+	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
             $eliminar = $connexio->prepare("DELETE FROM articles WHERE(titol = :titol)");
             $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo");
                         
@@ -53,7 +53,7 @@ include  "../Model/model.php";
     {
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_rubio', 'root', '');
+	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
             $actualizar = $connexio->prepare("UPDATE articles SET titol = :titol, cos = :cos WHERE titol = :titolOr");
             $comprobar = $connexio->prepare("SELECT titol, cos FROM articles WHERE titol = :titulo");
                         
@@ -84,7 +84,7 @@ include  "../Model/model.php";
     { 
         try
         {
-	        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_rubio', 'root', '');
+	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
             if($titol != "")
             {
                 if($cos != "")
@@ -124,7 +124,7 @@ include  "../Model/model.php";
         
         $inici = (string)($artPag);
         $final = (string)($pagina*$artPag);
-        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_rubio', 'root', '');
+        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
         $comprobar = $connexio->prepare("SELECT titol, cos FROM articles LIMIT :inici OFFSET :final");
         $comprobar->bindParam(":inici",$inici,PDO::PARAM_INT);
         $comprobar->bindParam(":final",$final,PDO::PARAM_INT);
@@ -133,7 +133,7 @@ include  "../Model/model.php";
     }
     function cantidad()//Prepara els statements requerits per saver el número de pàgines que es requeriran
     {
-        $connexio = new PDO('mysql:host=localhost;dbname=ptxy_xavi_rubio', 'root', '');
+        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
         $comprobar = $connexio->prepare("SELECT COUNT(*) FROM articles");
         $result = buscarBD($comprobar);
         return $result;

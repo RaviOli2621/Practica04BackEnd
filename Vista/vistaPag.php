@@ -37,7 +37,6 @@
 						$_POST['NumPag'] = $n;
 					} 
 
-					echo $n.$cantidad;
 					do//si estas en una pàgina sin datos, te manda a la pàgina 1
 					{
 						$result = articles($n ?? "",$a ?? "");
