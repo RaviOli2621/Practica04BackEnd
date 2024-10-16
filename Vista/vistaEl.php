@@ -58,7 +58,7 @@
         </tr>
         <div class="resultado"><!--Funció encarregada de elimiar les dades indicades i retornar si s'ha pogut fer la acció-->
                     <?php
-                        include_once "../Controlador/controlador.php";
+                        include_once "../Controlador/controladorArtEl.php";
 
                         if(isset($_POST['eliminar']))
                         {

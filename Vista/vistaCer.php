@@ -46,7 +46,7 @@
     </table>
     <div id ="div"><!--Funció encarregada de cercar les dades indicades i retornar de manera gràfica aquestes-->
         <?php
-                include_once "../Controlador/controlador.php";
+                include_once "../Controlador/controladorArtCer.php";
 
                 if(isset($_POST['consultar']))
                 {

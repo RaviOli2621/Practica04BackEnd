@@ -56,7 +56,7 @@
         <div class="resultado"><!--Funció encarregada de editar les dades indicades i retornar si s'ha pogut fer la acció-->
             
                     <?php
-                        include_once "../Controlador/controlador.php";
+                        include_once "../Controlador/controladorArtEd.php";
 
                         if(isset($_POST['editar']))
                         {

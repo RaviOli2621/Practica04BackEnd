@@ -14,7 +14,7 @@
 
 		<div id ="div"><!--Resultat-->
         <?php
-                include_once "../Controlador/controlador.php";
+                include_once "../Controlador/controladorArtPag.php";
                     
 					$cantidad;
 					foreach (cantidad() as $dada=>$valor){ //aconseguir la quantitat de dades

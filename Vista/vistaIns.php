@@ -45,7 +45,7 @@
         </tr>
         <div class="resultado"><!--Funció encarregada de inserir les dades indicades i retornar si s'ha pogut fer la acció-->
                     <?php
-                        include_once "../Controlador/controlador.php";
+                        include_once "../Controlador/controladorArtIns.php";
 
                         if(isset($_POST['inserir']))
                         {

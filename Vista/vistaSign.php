@@ -41,6 +41,16 @@
                         <input id="contr" type="password" name="contr" />
                     </td>
                 </tr>
+                <tr> <!--Contr-->
+                    <td class="td_2">	
+                        <label for="IntrContr">Torna a introdueix la teva contrasenya:</label>		
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="contr2" type="password" name="contr2" />
+                    </td>
+                </tr>
                     <td><!--Enviar-->
                         <input id="inputSub" class="inputSub" type="submit" name="inserir" value="Enviar" />
                     </td>
@@ -55,19 +65,17 @@
             </tr>
             <div class="resultado"><!--Funció encarregada de inserir les dades indicades i retornar si s'ha pogut fer la acció-->
                         <?php
-                            include_once "../controlador/controladorLog.php";
+                            include_once "../controlador/controladorSign.php";
                             
                             if(isset($_POST['inserir']))
                             {
-
                                 $u = $_POST['usuari'];
                                 $c = $_POST['correu'];
                                 $p = $_POST['contr'];
+                                $p2 = $_POST['contr2'];
 
         
-                                $result = comprovar($c ?? "",$u ?? "",$p ?? "");
-                                echo $_SESSION['Usuari'];
-
+                                $result = inserir($c ?? "",$u ?? "",$p ?? "",$p2 ?? "");
                                 $resTxt = "";
                                 $hayContenido = false;
                                 print_r($result);    

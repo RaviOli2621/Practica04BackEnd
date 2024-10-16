@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="Estils/estils.css"/>
     <title>Index</title>
 </head>
-<body> <!--Botons per anar a les diferents vistes-->
-    
-        <form id="LoginForm" action="<?php echo htmlentities("Vista/vistaLog.php"); ?>" method = "POST">
-            <input id="LoginButton" type="submit" name="AnEliminar" value="Login">
+<body> <!--Botons per anar a les diferents vistes-->    
+    <?php
+        session_start();
+        if($_SESSION['Usuari'] != "")
+        {
+            echo $_SESSION['Usuari'];
+        }
+    ?>
+        <form id="LoginForm" action="<?php echo htmlentities("Vista/vistaSign.php"); ?>" method = "POST">
+            <input id="LoginButton" type="submit" name="AnEliminar" value="Sign">
         </form>
         <form id="LoginForm" action="<?php echo htmlentities("Vista/vistaLog.php"); ?>" method = "POST">
             <input id="LoginButton" type="submit" name="AnEliminar" value="Login">
