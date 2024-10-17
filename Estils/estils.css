@@ -177,4 +177,44 @@ div
 	font-family: cursive;
 	font-weight: bold;
 }
-/*Estilo boton de enviar*/
+#LogOut
+{
+	padding: 3px;
+	margin-top: 0.6rem;
+	font-family: cursive;
+	font-weight: bold;
+}
+.buttonBloq
+{
+	width:100%;
+	padding:8px 16px;
+	/*margin-top:32px;*/
+	border:1px solid #000;
+	border-radius:5px;
+	display:block;
+	color:rgb(122, 124, 125);
+	background-color:rgb(80, 80, 81);
+	text-decoration:line-through;
+}
+#circle {
+	margin-left: 95.4%; 
+	background: rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+#circle div{
+    background: rgba(11, 92, 116);;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+#circle div h1{
+   color: #ffffff;
+}

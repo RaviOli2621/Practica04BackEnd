@@ -1,0 +1,25 @@
+    <form id="LoginForm" action="<?php echo htmlentities($_SERVER["PHP_SELF"]); ?>" method = "POST">
+    <?php
+        if(isset($_SESSION['Usuari']) && !isset($_POST['LogOut'])) 
+        {
+            echo '<input id="LogOut" type="submit" name="LogOut" value="LogOut">';
+        }
+    ?>
+    </form>
+<div>
+    <form action="<?php echo htmlentities("Vista/vistaPag.php"); ?>" method = "POST">
+        <input class="button" type="submit" name="AnEliminar" value="MostrarArticles">
+    </form>
+    <form action="<?php echo htmlentities("Vista/vistaCer.php"); ?>" method = "POST">
+        <input class="button" type="submit" name="AnCercar" value="Cercar">
+    </form>
+    <form action="<?php echo htmlentities("Vista/vistaIns.php"); ?>" method = "POST">
+        <input class="button" type="submit" name="AnInserir" value="Inserir">
+    </form>
+    <form action="<?php echo htmlentities("Vista/vistaEd.php"); ?>" method = "POST">
+        <input class="button" type="submit" name="AnEditar" value="Editar">
+    </form>
+    <form action="<?php echo htmlentities("Vista/vistaEl.php"); ?>" method = "POST">
+        <input class="button" type="submit" name="AnEliminar" value="Eliminar">
+    </form>
+</div>

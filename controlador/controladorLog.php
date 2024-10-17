@@ -41,6 +41,7 @@ session_start();
                 $_SESSION['Usuari'] = $Usuari;
                 $_SESSION['Correu'] = $Correu;
                 $_SESSION['Contrasenya'] = $Contrasenya;
+                $_SESSION['Tiempo'] = getdate();
                 return("<tr><td id=\"Res\">Logat amb exit</td></tr>");
             }
             return("<tr><td id=\"ResM\">Error amb la contrasenya o el correu</td></tr>");

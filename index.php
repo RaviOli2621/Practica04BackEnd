@@ -7,36 +7,28 @@
     <link rel="stylesheet" href="Estils/estils.css"/>
     <title>Index</title>
 </head>
-<body> <!--Botons per anar a les diferents vistes-->    
+<body>
     <?php
+        //cada vez que se toca un boton el tiempo se cierra la sesion, si se toca algo, se renueva el tiempo
         session_start();
-        if($_SESSION['Usuari'] != "")
+        if(isset($_POST['LogOut'])) 
         {
-            echo $_SESSION['Usuari'];
+            session_destroy();
+        }
+        //Depende de si estas logueado te salen unos bottones o otros
+        if(isset($_SESSION['Usuari']) && !isset($_POST['LogOut']))
+        {
+            echo '<div id="circle">
+                <div>
+                    <h1>'.substr($_SESSION['Usuari'],0,1).'</h1>
+                </div>
+            </div>';
+            include "./Vista/indexVista/Desbloquejat.html";
+            //print_r("<h1>".($_SESSION['Tiempo'])."</h1>");
+        }else
+        {
+            include "./Vista/indexVista/Bloquejat.html";
         }
     ?>
-        <form id="LoginForm" action="<?php echo htmlentities("Vista/vistaSign.php"); ?>" method = "POST">
-            <input id="LoginButton" type="submit" name="AnEliminar" value="Sign">
-        </form>
-        <form id="LoginForm" action="<?php echo htmlentities("Vista/vistaLog.php"); ?>" method = "POST">
-            <input id="LoginButton" type="submit" name="AnEliminar" value="Login">
-        </form>
-    <div>
-        <form action="<?php echo htmlentities("Vista/vistaPag.php"); ?>" method = "POST">
-            <input class="button" type="submit" name="AnEliminar" value="MostrarArticles">
-        </form>
-        <form action="<?php echo htmlentities("Vista/vistaIns.php"); ?>" method = "POST">
-            <input class="button" type="submit" name="AnInserir" value="Inserir">
-        </form>
-        <form action="<?php echo htmlentities("Vista/vistaCer.php"); ?>" method = "POST">
-            <input class="button" type="submit" name="AnCercar" value="Cercar">
-        </form>
-        <form action="<?php echo htmlentities("Vista/vistaEd.php"); ?>" method = "POST">
-            <input class="button" type="submit" name="AnEditar" value="Editar">
-        </form>
-        <form action="<?php echo htmlentities("Vista/vistaEl.php"); ?>" method = "POST">
-            <input class="button" type="submit" name="AnEliminar" value="Eliminar">
-        </form>
-    </div>
 </body>
 </html>

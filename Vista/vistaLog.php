@@ -66,10 +66,10 @@
 
         
                                 $result = comprovar($c ?? "",$u ?? "",$p ?? "");
-                                echo $_SESSION['Usuari'];
 
                                 $resTxt = "";
                                 $hayContenido = false;
+                                if(isset($_SESSION['Usuari'])) header('Location: ../index.php');
                                 print_r($result);    
                             }
                         ?>
