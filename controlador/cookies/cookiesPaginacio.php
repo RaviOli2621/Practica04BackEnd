@@ -1,4 +1,4 @@
 <?php
-setcookie("pagina",$_POST['NumPag'],time()+40);
-setcookie("articles",$_POST['artPag'],time()+40);
+setcookie("pagina",$_POST['NumPag'],time()+60*40);
+setcookie("articles",$_POST['artPag'],time()+60*40);
 ?>

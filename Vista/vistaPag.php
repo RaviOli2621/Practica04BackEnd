@@ -138,7 +138,8 @@
 		<tr>
             <td><!--Anar endarrere-->
                 <form id="endarrere" action="<?php echo htmlentities("../index.php"); ?>" method = "POST">
-				<a class="endarrere" href="javascript:;" onclick="document.getElementById('endarrere').submit()">Endarrere</a>
+					<?php include("../controlador/cookies/cookiesPaginacio.php"); ?>
+					<a class="endarrere" href="javascript:;" onclick="<?php include("../controlador/cookies/cookiesPaginacio.php"); ?> document.getElementById('endarrere').submit()">Endarrere</a>
                 </form>
             </td>
         </tr>
