@@ -1,5 +1,4 @@
 <?php 
-include  "../model/model.php";
     function encriptar($contra)
     {
         $contraEncr = password_hash($contra, PASSWORD_DEFAULT);        
@@ -7,6 +6,8 @@ include  "../model/model.php";
     }
     function inserir($Correu,$Usuari,$Contrasenya,$Contrasenya2)//Funció per inserir dades a la BD
     {
+        include  "../model/model.php";
+
         //comprovar dades
         if(strlen((preg_replace("/\s+/","",$Usuari)) < 1))
         {
@@ -50,5 +51,32 @@ include  "../model/model.php";
             return "<tr><td id=\"ResM\">Error: " . $e->getMessage()."</td></tr>";
         }
         
+    }
+    function canviarContr($Correu,$Usuari,$Contrasenya,$NovaCn,$NovaCn2)
+    {
+        include "controladorLog.php";
+        comprovar($Correu,$Usuari,$Contrasenya);
+        if(isset($_SESSION['Usuari']))//l'usuari es correcte
+        {
+            if(strlen((preg_replace("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}[^'\s]/","",$NovaCn)) < 1))
+            {
+                return "<tr><td id=\"ResM\">Error: contrasenya invalida. Requereix:\n -8 a 15 caracters\n -Una majuscula una minúscula un dígit i un caràcter especial ()\n -Sense espais\n </td></tr>";
+            }elseif($NovaCn != $NovaCn2)
+            {
+                return "<tr><td id=\"ResM\">Error: les contrasenyes han de coincidir</td></tr>";
+            }
+
+            $NovaCn = encriptar($NovaCn);
+            
+            $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');
+            $modificar = $connexio->prepare("UPDATE usuaris SET Contrasenya = :Contrasenya WHERE Usuari = :Usuari;");
+            $modificar->bindParam(":Contrasenya",$NovaCn);
+            $modificar->bindParam(":Usuari",$Usuari);
+            buscarBD($modificar);
+            $_SESSION['Contrasenya'] = $NovaCn2;
+            return "<tr><td id=\"Res\">Operació exitosa2</td></tr>";
+        }
+        session_destroy();//si el usuari es incorrecte destruir la sessió
+        return"<tr><td id=\"ResM\">Error: Usuari incorrecte</td></tr>";
     }
 ?>

@@ -9,6 +9,7 @@
 	<title>Paginació</title>
 </head>
 <body>
+	<?php session_start(); include"../controlador/altres/icone.php";?>
 	<div class="contenidor">
 		<h1>Articles</h1>
 
@@ -23,19 +24,29 @@
 						}
 					}
 
-					
-					if(isset($_POST['artPag']) && ($_POST['artPag']) > 1) $a = (int)($_POST['artPag']);//que los articulos por pagina no sean mas pequeños que 1
-					else $a = 1;
-					$cantidad = round($cantidad/$a);
-					if(isset($_POST['NumPag']) && ($_POST['NumPag']) > 0) $n = (int)($_POST['NumPag']);//que la pagina no sean mas pequeña que 1
-					else $n = 1;
-					
-					
-					if ($n > $cantidad) //si la pàgina actual és més gran que la quantitat de pàgines requerides es canvia per la última pàgina posible
+					if(isset($_POST['artPag']))
 					{
-						$n = $cantidad;
+						if(($_POST['artPag']) > 1) $a = (int)($_POST['artPag']);//que los articulos por pagina no sean mas pequeños que 1
+						else $a = 1;
+						if($a > $cantidad) $a = $cantidad;
+						$_POST['artPag'] = $a;
+						$cantidad = round($cantidad/$a);
+						if(($_POST['NumPag']) > 0) $n = (int)($_POST['NumPag']);//que la pagina no sean mas pequeña que 1
+						else $n = 1;
+					}else if(isset($_COOKIE['articles']))
+					{
+						$a = $_COOKIE['articles'];
+						$n = $_COOKIE['pagina'];
+						$_POST['artPag'] = $a;
 						$_POST['NumPag'] = $n;
-					} 
+
+					}else
+					{
+						$a = 1;
+						$n = 1;
+					}
+						
+					
 
 					do//si estas en una pàgina sin datos, te manda a la pàgina 1
 					{
@@ -67,7 +78,6 @@
 							$n = 1;
 						}
 					}while(!$hayContenido);
-					
             ?>
     	</div>
 
@@ -118,6 +128,7 @@
 						echo"<input type=\"number\" name=\"artPag\" id=\"artPag\" pattern=\"[0-9]+\" onchange=\"document.getElementById('cambPag').submit()\" value=\"1\">";
 						$_POST['artPag'] = 1; 
 					}
+					include("../controlador/cookies/cookiesPaginacio.php");
 				?>
 			</ul>
 			

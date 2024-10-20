@@ -3,7 +3,6 @@
 include  "../model/model.php";
     function modificar($titolOr,$titol,$cos)//Funció per modificar dades a la BD
     {
-        session_start();
         try
         {
 	        $connexio = new PDO('mysql:host=localhost;dbname=pt04_xavi_rubio', 'root', '');

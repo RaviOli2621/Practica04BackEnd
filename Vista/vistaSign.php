@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Estils/estilsLog.css"/>
+    <script defer src="Js/mantenerDatos.js"></script>;
     <title>Cercar</title>
 </head>
 <body>
@@ -78,7 +79,11 @@
                                 $result = inserir($c ?? "",$u ?? "",$p ?? "",$p2 ?? "");
                                 $resTxt = "";
                                 $hayContenido = false;
-                                print_r($result);    
+                                print_r($result);       
+                                echo'<input id="resposta" type="hidden" name="resposta" value="'.$u.','.$c.'"/>';
+                            }else
+                            {
+                                echo'<input id="resposta" type="hidden" name="resposta" value="noHay"/>';
                             }
                         ?>
             </div>

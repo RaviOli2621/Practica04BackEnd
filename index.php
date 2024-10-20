@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Estils/estils.css"/>
+    <script src=""></script>
     <title>Index</title>
 </head>
 <body>
+    <?php session_start(); ?>
+    <h1 id="titulo">Glossari de termes als jocs de lluita</h1>
     <?php
+        
         //cada vez que se toca un boton el tiempo se cierra la sesion, si se toca algo, se renueva el tiempo
-        session_start();
         if(isset($_POST['LogOut'])) 
         {
             session_destroy();

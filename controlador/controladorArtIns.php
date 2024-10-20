@@ -1,7 +1,6 @@
 <?php 
 
 include  "../model/model.php";
-session_start();
     function inserir($titol,$cos)//Funció per inserir dades a la BD
     {
         try

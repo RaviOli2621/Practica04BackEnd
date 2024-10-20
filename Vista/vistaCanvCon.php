@@ -41,11 +41,26 @@
                     <td>
                         <input id="contr" type="password" name="contr" />
                     </td>
-                <tr>
-                    <td>
-                        <a href="./vistaCanvCon.php">Canviar contrasenya</a>
+                </tr>
+                <tr> <!--NovaContr-->
+                    <td class="td_2">	
+                        <label for="IntrContr">Introdueix la nova contrasenya:</label>		
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <input id="contr2" type="password" name="contr2" />
+                    </td>
+                </tr>
+                <tr> <!--NovaContr2-->
+                    <td class="td_2">	
+                        <label for="IntrContr">Introdueix la nova contrasenya:</label>		
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="contr3" type="password" name="contr3" />
+                    </td>
                 </tr>
                     <td><!--Enviar-->
                         <input id="inputSub" class="inputSub" type="submit" name="inserir" value="Enviar" />
@@ -61,7 +76,7 @@
             </tr>
             <div class="resultado"><!--Funció encarregada de inserir les dades indicades i retornar si s'ha pogut fer la acció-->
                         <?php
-                            include_once "../controlador/controladorLog.php";
+                            include_once "../controlador/controladorSign.php";
                             
                             if(isset($_POST['inserir']))
                             {
@@ -70,11 +85,15 @@
                                 $c = $_POST['correu'];
                                 $p = $_POST['contr'];
 
+                                $p2 = $_POST['contr2'];
+                                $p3 = $_POST['contr3'];
+
+
         
-                                $result = comprovar($c ?? "",$u ?? "",$p ?? "");
+                                $result = canviarContr($c ?? "",$u ?? "",$p ?? "",$p2 ?? "",$p3 ?? "");
 
                                 $resTxt = "";
-                                if(isset($_SESSION['Usuari'])) header(header: 'Location: ../index.php');
+                                if($result = "Operació exitosa2") header(header: 'Location: ../index.php');
                                 print_r(value: $result);  
                                 echo'<input id="resposta" type="hidden" name="resposta" value="'.$u.','.$c.'"/>';
                             }else

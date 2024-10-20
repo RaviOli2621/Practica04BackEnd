@@ -123,3 +123,25 @@ div
 	color:#fff;
 	text-decoration: none;
 }
+#circle {
+	margin-left: 95.4%; 
+	background: rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 78px;
+    height: 78px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+#circle div{
+    background: rgba(11, 92, 116);;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+#circle div h1{
+   color: #ffffff;
+}
