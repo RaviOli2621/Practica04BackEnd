@@ -1,5 +1,5 @@
 <?php 
-
+//Xavi Rubio Monje
 include  "../model/model.php";
     function inserir($titol,$cos)//Funció per inserir dades a la BD
     {

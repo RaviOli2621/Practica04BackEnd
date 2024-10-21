@@ -77,8 +77,6 @@
 
         
                                 $result = inserir($c ?? "",$u ?? "",$p ?? "",$p2 ?? "");
-                                $resTxt = "";
-                                $hayContenido = false;
                                 print_r($result);       
                                 echo'<input id="resposta" type="hidden" name="resposta" value="'.$u.','.$c.'"/>';
                             }else

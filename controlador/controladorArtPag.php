@@ -1,5 +1,5 @@
 <?php 
-
+//Xavi Rubio Monje
 include  "../model/model.php";
     function articles($pagina,$artPag)//Prepara els statements requerits per mostrar els articles en l'inici
     {

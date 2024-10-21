@@ -1,4 +1,5 @@
 <?php
+//Xavi Rubio Monje
 if(isset($_SESSION['Usuari']) && !isset($_POST['LogOut']))
 {
     echo '<div id="circle">

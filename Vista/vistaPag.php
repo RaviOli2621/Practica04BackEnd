@@ -8,8 +8,9 @@
 	<link rel="stylesheet" href="../Estils/estils2.css"> <!-- feu referència al vostre fitxer d'estils -->
 	<title>Paginació</title>
 </head>
-<body>
-	<?php session_start(); include"../controlador/altres/icone.php";?>
+<body id="bodyConFoto">
+	<?php include"../controlador/acabaSession.php";?>
+	<?php include"../controlador/altres/icone.php";?>
 	<div class="contenidor">
 		<h1>Articles</h1>
 
@@ -119,7 +120,7 @@
 					//si esta en la ultima página no se muestre la flecha de adelante
 					if($_POST['NumPag'] < $cantidad) echo"<li class=\"*disabled\"><a href=\"javascript:;\" onclick=\"document.getElementById('NumPag').value=(Number(document.getElementById('NumPag').value)+1);document.getElementById('cambPag').submit()\">&raquo;</a></li>";
 					//Si el número del article es 0 o menor es posa en 1
-					echo"<br><br>Articles per pàgina:	";
+					echo"<br><br><b>Articles per pàgina:	<b>";
 					if(isset($_POST["artPag"]) && ($_POST['artPag']) > 0)
 					{
 						echo"<input type=\"number\" name=\"artPag\" id=\"artPag\" pattern=\"[0-9]+\" onchange=\"document.getElementById('cambPag').submit()\" value=\"".$_POST['artPag']."\">";

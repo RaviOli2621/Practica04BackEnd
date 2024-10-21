@@ -1,5 +1,6 @@
 <?php 
-    function encriptar($contra)
+//Xavi Rubio Monje
+function encriptar($contra)
     {
         $contraEncr = password_hash($contra, PASSWORD_DEFAULT);        
         return $contraEncr;    
@@ -60,9 +61,13 @@
         {
             if(strlen((preg_replace("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}[^'\s]/","",$NovaCn)) < 1))
             {
+                session_destroy();
+                setcookie("UsuariLogat", "" , time()-60,"/");
                 return "<tr><td id=\"ResM\">Error: contrasenya invalida. Requereix:\n -8 a 15 caracters\n -Una majuscula una minúscula un dígit i un caràcter especial ()\n -Sense espais\n </td></tr>";
             }elseif($NovaCn != $NovaCn2)
             {
+                session_destroy();
+                setcookie("UsuariLogat", "" , time()-60,"/");
                 return "<tr><td id=\"ResM\">Error: les contrasenyes han de coincidir</td></tr>";
             }
 
@@ -73,10 +78,11 @@
             $modificar->bindParam(":Contrasenya",$NovaCn);
             $modificar->bindParam(":Usuari",$Usuari);
             buscarBD($modificar);
-            $_SESSION['Contrasenya'] = $NovaCn2;
+            $_SESSION['Contrasenya'] = $NovaCn;
             return "<tr><td id=\"Res\">Operació exitosa2</td></tr>";
         }
         session_destroy();//si el usuari es incorrecte destruir la sessió
+        setcookie("UsuariLogat", "" , time()-60,"/");
         return"<tr><td id=\"ResM\">Error: Usuari incorrecte</td></tr>";
     }
 ?>

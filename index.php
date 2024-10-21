@@ -9,7 +9,8 @@
     <title>Index</title>
 </head>
 <body>
-    <?php session_start(); ?>
+    <?php include "./controlador/acabaSession.php";?>
+ 
     <h1 id="titulo">Glossari de termes als jocs de lluita</h1>
     <?php
         
@@ -17,6 +18,7 @@
         if(isset($_POST['LogOut'])) 
         {
             session_destroy();
+            setcookie("UsuariLogat", "" , time()-60,"/");
         }
         //Depende de si estas logueado te salen unos bottones o otros
         if(isset($_SESSION['Usuari']) && !isset($_POST['LogOut']))

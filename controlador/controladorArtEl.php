@@ -1,5 +1,5 @@
 <?php 
-
+//Xavi Rubio Monje
 include  "../model/model.php";
     function eliminar($titol)//Funció per eliminar dades a la BD
     {

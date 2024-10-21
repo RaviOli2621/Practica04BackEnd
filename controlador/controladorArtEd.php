@@ -1,5 +1,5 @@
 <?php 
-
+//Xavi Rubio Monje
 include  "../model/model.php";
     function modificar($titolOr,$titol,$cos)//Funció per modificar dades a la BD
     {

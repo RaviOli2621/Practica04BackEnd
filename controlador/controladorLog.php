@@ -1,5 +1,5 @@
 <?php 
-//FALLA LO DE COMPROBAR EL CORREO NO SEA IGUAL
+//Xavi Rubio Monje
 include  "../model/model.php";
 ini_set('session.gc_maxlifetime', 40 * 60);
 session_start();
@@ -42,6 +42,7 @@ session_start();
                 $_SESSION['Usuari'] = $Usuari;
                 $_SESSION['Correu'] = $Correu;
                 $_SESSION['Contrasenya'] = $Contrasenya;
+                setcookie("UsuariLogat", $Usuari , time()+2400,"/");
                 return("<tr><td id=\"Res\">Logat amb exit</td></tr>");
             }
             return("<tr><td id=\"ResM\">Error amb la contrasenya o el correu</td></tr>");

@@ -1,5 +1,5 @@
 <?php 
-
+//Xavi Rubio Monje
 include  "../model/model.php";
     function buscar($titol,$cos)//Funció per cercar dades a la BD
     { 
