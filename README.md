@@ -54,6 +54,7 @@
         -Usuari incorrecte: retornar feedback del format de la contrasenya i destruir la sessió i la cookie creada 
 
 ## LogOut
+    
     Al clicar el boto de deslogarse, es recarrega el index i es destrueixen la session i la cookie 
 
 ## Cookies
@@ -69,15 +70,26 @@
 
 ### Paginació
     
-    Existeixen dos cookies: "articles" i "pagina"
+    -Existeixen dos cookies: "articles" i "pagina"
         -Articles guarda el número d'artícles per pàgina
         -Pagina guarda la última pàgina on s'ha anat
-    Aquestes cookies es creen en cookiesPaginacio.php, codi que es crida quan ja s'ha carregat la part de la pàgina on encara poden variar les dades 
+    -Aquestes cookies es creen en cookiesPaginacio.php, codi que es crida quan ja s'ha carregat la part de la pàgina on encara poden variar les dades 
 
 ## Canvis respecte la pràctica 2 
 
     -Ara la pàgina del index s'encarrega de cridar un html o un altre depenent de si et trobes logat o no (indexVista/Bloquejat i indexVista/Desbloquejat)
     -Ara hi ha un controlador per vista (controladorSign serveix per el Sign i per el canviar la contrasenya)
+
+## Usuaris
+
+Usuari      Correu                       Contrasenya
+
+Xavi        j.rubio2@sapalomera.cat      a(no es segura ja que per fer les proves era més comode posar una lletra)
+XaviProfe   xmartin@sapalomera.cat       P@ssw0rd
+paco        paco@gmail.com               P@ssw0rd
+
+Nomès pot haber un usuari amb el mateix nom ni correu
+
 
 ## Altres
 
